@@ -12,9 +12,36 @@ This project shows how I built a simple, Linux-based Homelab environment. I inst
 
 ## Used Technologies
 
-- Ubuntu Server 22.04 LTS
-- VirtualBox
-- Apache2
-- DokuWiki
-- UFW
+- OS: Ubuntu Server 22.04 LTS
+- Virtualization: VirtualBox
+- Web server: Apache2
+- Documentation system: DokuWiki
+- Firewall: UFW
+- Version control: Git and GitHub
 
+## System architecture
+
+The project uses an Ubuntu server running on a VirtualBox virtual machine, which runs Apache web server and Dokuwiki to serve content. 
+
+## Installation steps
+
+1. Installing VirtualBox and creating Ubuntu VM
+2. Installing Apache2 web server
+3. Installing and configuring Dokuwiki
+4. Setting up firewall and permissions
+5. Testing and documenting
+
+**Detailed documentation:** [docs/01_network.md](docs/01_network.md)
+
+## Security settings
+
+- System update
+- Firewall settings (UFW)
+- Apache DocumentRoot permissions
+
+## What have I learned?
+
+- Setting up and maintaining Linux server
+- Basics of Apache web server configuration
+- Firewall and permission management under Linux
+- Versions control with GitHub
