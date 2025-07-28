@@ -10,7 +10,7 @@ This project shows how I built a simple, Linux-based Homelab environment. I inst
 - Installing a DokuWiki documentation system
 - Setting up basic security (firewall, permissions)
 
-## Used Technologies
+## Used technologies
 
 - OS: Ubuntu Server 22.04 LTS
 - Virtualization: VirtualBox
