@@ -8,7 +8,7 @@ The figure below shows the network topology of the router, physical host and the
 
 ### Diagram
 
-![Network Topology](/images/network_topology.png)
+![Network Topology](./images/network_topology.png)
 
 ### Description
 
