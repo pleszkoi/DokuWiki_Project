@@ -2,6 +2,7 @@
 
 This document describes the homelab's network settings, the IP addressing, hostname conventions, and the DNS and port forwarding settings.
 
+
 ## Network Topology
 
 The figure below shows the network topology of the router, physical host and the virtual machine.
@@ -17,6 +18,7 @@ The figure below shows the network topology of the router, physical host and the
 - Router: 192.168.1.1
 - Connection: Bridged network → The VM is on the same network as the host machine.
 
+
 ## IP Address and Hostname Table
 
 The table below lists the devices in the homelab network, their IP address, hostname, role, network mode, MAC address and additional notes.
@@ -26,6 +28,7 @@ The table below lists the devices in the homelab network, their IP address, host
 | Router         | 192.168.1.1  | router.local   | Gateway/DHCP server  | -            | 3c:58:5d:e9:c0:56 | Providing internet access |
 | Host machine   | 192.168.1.87 | host.local     | Hypervisor (Linux)   | -            | 30:f6:ef:d5:13:f5 | Runs the Virtual Machine  |
 | Virual Machine | 192.168.1.88 | dokuwiki.local | Webserver (Dokuwiki) | Bridged      | 08:00:27:4c:b3:f3 | Apache + PHP installed    |
+
 
 ## Hosts File Configuration
 
@@ -41,6 +44,7 @@ sudo vim /etc/hosts
 192.168.1.88 dokuwiki.local
 ```
 
+
 ## Ports and Services
 
 The table below shows the main ports used by the system and their function.
@@ -48,7 +52,7 @@ The table below shows the main ports used by the system and their function.
 | Port | Protocoll | Service       | Description                      |
 |------|-----------|---------------|----------------------------------|
 | 80   | TCP       | HTTP (Apache) | DokuWiki web interface           |
-| 80   | TCP       | SSH           | Remote management for the server |
+| 22   | TCP       | SSH           | Remote management for the server |
 
 The opened ports can be checked with the following command:
 ```bash
@@ -61,9 +65,10 @@ tcp LISTEN 0 511 *:80 *:*
 tcp LISTEN 0 128 *:22 *:*
 ```
 
+
 ## Firewall Rules
 
-I configured the firewall for network security, to allow only the necessary ports.
+I configured the firewall for network security to allow only the necessary ports.
 
 Used UFW commands:
 
@@ -86,11 +91,10 @@ sudo ufw status
 Example output:
 ```
 Status: active
+
 To             Action   From
 --             ------   ----
 22/tcp         ALLOW    Anywhere
 80/tcp         ALLOW    Anywhere
 ```
-
-## DNS / Local Resolution
 
