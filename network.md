@@ -1,4 +1,4 @@
-# Network configuration
+# Network Configuration
 
 This document describes the homelab's network settings, the IP addressing, hostname conventions, and the DNS and port forwarding settings.
 
