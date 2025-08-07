@@ -32,6 +32,7 @@ Below are the main specifications of the host:
 
 This configuration allows running multiple virtual machines, but the allocation of the RAM and CPU cores requires optimization. In the test environment, it is planned to run 1-2 VMs in parallel.
 
+
 ## Virtualization Software Details
 
 This section contains the virtualization platform and the applied configuration settings.
@@ -41,13 +42,15 @@ This section contains the virtualization platform and the applied configuration 
 
 The setting of the network was set to "Bridged Adapter" mode so that the virtual machine is on the same network as the host and can be accessed from other devices.
 
+
 ## Virtual Machine Specifications
 
-| VM Name          | OS                 | CPU    | RAM    | Disk Size | IP Address   | Hostname       |
-|------------------|--------------------|--------|--------|-----------|--------------|----------------|
-| Ubuntu DocServer | Ubuntu 22.04.5 LTS | 2 vCPU | 2 Gi   | 10G       | 192.168.1.88 | dokuwiki.local |
+| VM Name          | OS                 | CPU    | RAM    | Disk Size  | IP Address   | Hostname       |
+|------------------|--------------------|--------|--------|------------|--------------|----------------|
+| Ubuntu DocServer | Ubuntu 22.04.5 LTS | 2 vCPU | 2 Gi   | 15Gb       | 192.168.1.88 | dokuwiki.local |
 
 Allocating the VM's resources I have adjusted the performance of the host machine. 2 vCpus an 2 Gi RAM are optimal for installing and running DokuWiki.
+
 
 ## Network Configuration
 
@@ -98,10 +101,20 @@ ping 192.168.1.1
 ping google.com
 ```
 
+
 ## Storage and Snapshots
 
+- Disk Allocation
+    - Disk Type: VDI (VirtualBox Disk Image)
+    - Storage Mode: Dynamically Allocated
+    - Disk Size: 15 Gb
+    - Storage Location: /home/istvan/VirtualBox VMs/Ubuntu DocServer/
 
+- Snapshots
+    - Purpose: Create a pre-installation backup point.
+    - Snapshot Name: Initial Setup
+    - Creation Date: 2025.08.06.
 
-## Installation Steps
+- Backup Strategy
 
-
+Exporting the Virtual Machine and the snapshots in .ova format weekly, copying them to an external drive. Only the documentation is saved in Git.
