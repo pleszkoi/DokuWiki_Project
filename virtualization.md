@@ -86,7 +86,7 @@ Applying the configuration:
 sudo netplan apply
 ```
 
-Examining:
+Checking:
 
 - Checking the IP address:
 
