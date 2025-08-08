@@ -84,6 +84,7 @@ Access permissions can be set per page, namespace or globally.
 | Full access | 8    | Deleting page, admin functions |
 
 - Setting rights
+
 Log in as administrator. Open the Access Control List Management menu and enter the desired namespace or page. Assign permission levels to the users or groups.
 
 The configuration is stored in the following file:
