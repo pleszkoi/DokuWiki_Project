@@ -7,11 +7,11 @@ This document contains the errors encountered during homelab project, their caus
 
 ### Error description
 
-The DokuWiki server was started, the host (Apache) was running, but the http://dokuwiki.local or the server IP address (http://192.168.1.88) was unrechable from the browser.
+The DokuWiki server was started, the server (Apache) was running, but the http://dokuwiki.local or the server IP address (http://192.168.1.88) was unrechable from the browser.
 
 Steps checked during troubleshooting:
 - The server service was running (```systemctl status apache2```).
-- Port 80 was active ('''ss -tuln | grep 80''').
+- Port 80 was active (```ss -tuln | grep 80```).
 - Hosts file was properly configured.
 - The VM had an IP address and it was reachable by pinging.
 
