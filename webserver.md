@@ -27,7 +27,7 @@ sudo apt install php libapache2-mod-php php-xml php-gd php-json php-mbstring
 
 - Checking:
 ```bash
-echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info-php
+echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
 ```
 
 
@@ -60,7 +60,7 @@ sudo nano /etc/apache2/sites-available/dokuwiki.conf
 ```
 
 - Content:
-```php
+```apache
 <VirtualHost *:80>
     ServerName dokuwiki.local
     DocumentRoot /var/www/html/dokuwiki
