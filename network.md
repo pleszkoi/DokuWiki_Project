@@ -3,7 +3,7 @@
 This document describes the homelab's network settings, the IP addressing, hostname conventions, and the DNS and port forwarding settings.
 
 
-## 1. Network Topology
+## 1. Network topology
 
 The figure below shows the network topology of the router, physical host and the virtual machine.
 
@@ -19,7 +19,7 @@ The figure below shows the network topology of the router, physical host and the
 - Connection: Bridged network → The VM is on the same network as the host machine.
 
 
-## 2. IP Address and Hostname Table
+## 2. IP address and hostname table
 
 The table below lists the devices in the homelab network, their IP address, hostname, role, network mode, MAC address and additional notes.
 
@@ -30,7 +30,7 @@ The table below lists the devices in the homelab network, their IP address, host
 | Virual Machine | 192.168.1.88 | dokuwiki.local | Webserver (Dokuwiki) | Bridged      | 08:00:27:4c:b3:f3 | Apache + PHP installed    |
 
 
-## 3. Hosts File Configuration
+## 3. Hosts file configuration
 
 Using the 'hosts' file, I configured name resolution on the host machine so that DokuWiki can be accessed at 'http://dokuwiki.local'.
 
@@ -45,7 +45,7 @@ Using the 'hosts' file, I configured name resolution on the host machine so that
   ```
 
 
-## 4. Ports and Services
+## 4. Ports and services
 
 The table below shows the main ports used by the system and their function.
 
@@ -66,7 +66,7 @@ tcp LISTEN 0 128 *:22 *:*
 ```
 
 
-## 5. Firewall Rules
+## 5. Firewall rules
 
 I configured the firewall for network security to allow only the necessary ports.
 
