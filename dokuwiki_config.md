@@ -120,14 +120,16 @@ It's access path is ```/var/www/html/dokuwiki/lib/tpl/dokuwiki/```.
 
 ### 3.3. Choose template
 
-The template selection is done in the ```conf/local.php``` file. For example:
+The template selection is done in the ```conf/local.php``` file. 
+For example:
 ```php
 $conf['template'] = 'starter';
 ```
 
 ### 3.4. Customize template
 
-Most templates contain HTML, CSS, and JavaScript files that can be modified as desired. Example path:
+Most templates contain HTML, CSS, and JavaScript files that can be modified as desired. 
+Example path:
 ```bash
 /var/www/html/dokuwiki/lib/tpl/starter/style.ini
 ```
@@ -309,7 +311,7 @@ It can be set in Admin/Configutartion Settings/auth_security_timeout.
 
 ### 6.6. Regular updates
 
-- Updating Dokuwiki from Admin interface.
+- Updating Dokuwiki from Admin interface
 - Updating extensions and templates from Admin interface
 - Updating the system (Linux. Apache, PHP):
   ```bash
