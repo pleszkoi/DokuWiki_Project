@@ -298,7 +298,7 @@ For example:
 ```apache
 <Directory /var/www/html/dokuwiki>
     <FilesMatch "(admin|install)\.php">
-        Require ip 192.168.1.100
+        Require ip 192.168.1.88
     </FilesMatch>
 </Directory>
 ```
