@@ -53,9 +53,11 @@ sudo rm /var/www/html/dokuwiki/install.php
 DokuWiki has its own built-in user- and permission management system that does not require an external database.
 
 - **Add users**
+
   Log in to the website as administrator and enter the values for the new user in the User Manager menu. Finally click the Create User button.
 
 - **Store users**
+
   User data is stored in the following file:
   ```bash
   /var/www/html/dokuwiki/conf/users.auth.php
