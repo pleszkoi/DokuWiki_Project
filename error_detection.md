@@ -3,9 +3,9 @@
 This document contains the errors encountered during homelab project, their causes and the troubleshooting steps.
 
 
-## The firewall blocked webserver
+## 1. The firewall blocked webserver
 
-### Error description
+### 1.1. Error description
 
 The DokuWiki server was started, the server (Apache) was running, but the http://dokuwiki.local or the server IP address (http://192.168.1.88) was unrechable from the browser.
 
@@ -15,11 +15,11 @@ Steps checked during troubleshooting:
 - Hosts file was properly configured.
 - The VM had an IP address and it was reachable by pinging.
 
-### Reason
+### 1.2. Reason
 
 The firewall was active on the server, but only the SSH (Port 22) was allowed, the HTTP (Port 80) was not.
 
-### Solution
+### 1.3. Solution
 
 Allowing Port 80:
 
@@ -43,19 +43,19 @@ http://dokuwiki.local
 
 Accessing the server IP address and dokuwki.local from the browser was successful.
 
-## IPv6 preference caused ping problem
+## 2. IPv6 preference caused ping problem
 
-### Error description
+### 2.1. Error description
 
 I haven't got any response after running 'ping google.com' command. I only saw an IPv6 address:
 PING ggogle.com(bud02s39-in-x0e.1e100.net(2a00:1470:500d:80e::200d)) 56 data bytes
 The process stopped and the data loss was 100%.
 
-### Reason
+### 2.2. Reason
 
 The system primarily used IPv6 addresses for name resolution, but there was no IPv6 internet connection in the environment.
 
-### Solution
+### 2.3. Solution
 
 Disabling IPv6 in the system:
 
@@ -82,5 +82,3 @@ Checking:
 ping google.com
 ```
 The ping uses IPv4 addresses and it runs.
-
-
