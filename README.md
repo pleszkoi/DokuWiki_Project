@@ -31,8 +31,6 @@ The project uses an Ubuntu server running on a VirtualBox virtual machine, which
 4. Setting up firewall and permissions
 5. Testing and documenting
 
-**Detailed documentation:** [docs/01_network.md](docs/01_network.md)
-
 ## Security settings
 
 - System update
