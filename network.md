@@ -3,15 +3,15 @@
 This document describes the homelab's network settings, the IP addressing, hostname conventions, and the DNS and port forwarding settings.
 
 
-## Network Topology
+## 1. Network Topology
 
 The figure below shows the network topology of the router, physical host and the virtual machine.
 
-### Diagram
+### 1.1. Diagram
 
 ![Network Topology](/images/Network_topology.png)
 
-### Description
+### 1.2. Description
 
 - Host (Linux): 192.168.1.87
 - Virtual Machine (DokuWiki server): 192.168.1.88
@@ -19,7 +19,7 @@ The figure below shows the network topology of the router, physical host and the
 - Connection: Bridged network → The VM is on the same network as the host machine.
 
 
-## IP Address and Hostname Table
+## 2. IP Address and Hostname Table
 
 The table below lists the devices in the homelab network, their IP address, hostname, role, network mode, MAC address and additional notes.
 
@@ -30,22 +30,22 @@ The table below lists the devices in the homelab network, their IP address, host
 | Virual Machine | 192.168.1.88 | dokuwiki.local | Webserver (Dokuwiki) | Bridged      | 08:00:27:4c:b3:f3 | Apache + PHP installed    |
 
 
-## Hosts File Configuration
+## 3. Hosts File Configuration
 
 Using the 'hosts' file, I configured name resolution on the host machine so that DokuWiki can be accessed at 'http://dokuwiki.local'.
 
 - The file's location: '/etc/hosts'
 - Editing the file: 
-```bash
-sudo vim /etc/hosts
-```
+  ```bash
+  sudo vim /etc/hosts
+  ```
 - Entry: 
-```bash
-192.168.1.88 dokuwiki.local
-```
+  ```bash
+  192.168.1.88 dokuwiki.local
+  ```
 
 
-## Ports and Services
+## 4. Ports and Services
 
 The table below shows the main ports used by the system and their function.
 
@@ -60,41 +60,40 @@ sudo ss -tuln
 ```
 
 Example output:
-```
+```markdown
 tcp LISTEN 0 511 *:80 *:*
 tcp LISTEN 0 128 *:22 *:*
 ```
 
 
-## Firewall Rules
+## 5. Firewall Rules
 
 I configured the firewall for network security to allow only the necessary ports.
 
 Used UFW commands:
 
 1. Enabled ports:
-```bash
-sudo ufw allow 22/tcp
-sudo ufw allow 80/tcp
-```
+  ```bash
+  sudo ufw allow 22/tcp
+  sudo ufw allow 80/tcp
+  ```
 
 2. Enabling firewall:
-```bash
-sudo enable ufw
-```
+  ```bash
+  sudo enable ufw
+  ```
 
 3. Check rules
-```bash
-sudo ufw status
-```
+  ```bash
+  sudo ufw status
+  ```
 
 Example output:
-```
-Status: active
-
-To             Action   From
---             ------   ----
-22/tcp         ALLOW    Anywhere
-80/tcp         ALLOW    Anywhere
-```
-
+  ```
+  Status: active
+  
+  To             Action   From
+  --             ------   ----
+  22/tcp         ALLOW    Anywhere
+  80/tcp         ALLOW    Anywhere
+  ```
