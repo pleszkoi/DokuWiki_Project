@@ -3,7 +3,7 @@
 Documentation on installing and configuring DokuWiki web server using Apache on Ubuntu-based Virtual Machine.
 
 
-## 1. Installing Apache
+## 1. Installing apache
 
 ### 1.1. Commands
 
@@ -35,7 +35,7 @@ echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
 ```
 
 
-## 3. Download and Install DokuWiki
+## 3. Download and install DokuWiki
 
 ### 3.1. Download
 
@@ -51,7 +51,7 @@ sudo mv dokuwiki-* /var/www/html/dokuwiki
 ```
 
 
-## 4. Setting Permissions
+## 4. Setting permissions
 
 ```bash
 sudo chown -R www-data:www-data /var/www/html/dokuwiki
@@ -59,9 +59,9 @@ sudo chmod 755 /var/www/html/dokuwiki
 ```
 
 
-## 5. Setting Virtual Host
+## 5. Setting virtual host
 
-### 5.1. Create File
+### 5.1. Create file
 
 ```bash
 sudo nano /etc/apache2/sites-available/dokuwiki.conf
@@ -82,7 +82,7 @@ sudo nano /etc/apache2/sites-available/dokuwiki.conf
 </VirtualHost>
 ```
 
-## 6. Setting Host Name on Host Machine
+## 6. Setting host name on host machine
 
 On Ubuntu Linux: ```/etc/hosts```
 
@@ -91,7 +91,7 @@ On Ubuntu Linux: ```/etc/hosts```
 ```
 
 
-## 7. Restarting Apache and Activate Site
+## 7. Restarting apache and activate site
 
 ```bash
 sudo a2ensite dokuwiki.conf
@@ -100,7 +100,7 @@ sudo systemctl reload apache2
 ```
 
 
-## 8. Accessing the Installer
+## 8. Accessing the installer
 
 In browser:
   ```arduino
