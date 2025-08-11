@@ -199,7 +199,7 @@ In DokuWiki saving is simple because there is no need for a database. All conten
 
 ### 5.1. Content to save
 
-- **Data:** - wiki's pages, files, uploaded images
+- **Data** - wiki's pages, files, uploaded images
   ```swift
   /var/www/html/dokuwiki/data/
   ```
