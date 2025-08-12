@@ -48,7 +48,7 @@ Accessing the server IP address and dokuwki.local from the browser was successfu
 ### 2.1. Error description
 
 I haven't got any response after running ```ping google.com``` command. I only saw an IPv6 address:
-PING ggogle.com(bud02s39-in-x0e.1e100.net(2a00:1470:500d:80e::200d)) 56 data bytes
+```PING google.com(bud02s39-in-x0e.1e100.net(2a00:1470:500d:80e::200d)) 56 data bytes```
 The process stopped and the data loss was 100%.
 
 ### 2.2. Reason
