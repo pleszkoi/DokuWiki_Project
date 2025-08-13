@@ -106,3 +106,70 @@ In browser:
   ```arduino
   http://dokuwiki.local/install.php
   ```
+
+## I. HTTPS Configuration
+
+This section describes how HTTPS was enabled for the local DokuWiki installation using a self-signed SSL certificate.
+
+### I. 1. Preparation
+
+- I checked if DokuWiki is enable with ```http://dokuwiki.local```.
+- I enabled Port 443 with ``` sudo ufw allow 443/tcp```.
+
+### I. 2. Generate a self-signed SSL certificate
+
+I ran the following commands on the server:
+
+```bash
+sudo openssl req -x509 -nodes -days 365 \
+  -newkey rsa:2048 \
+  -keyout /etc/ssl/private/dokuwiki-selfsigned.key \
+  -out /etc/ssl/certs/dokuwiki-selfsigned.crt
+```
+
+
+### I. 3. Create HTTPS VirtualHost configuration
+
+- I opened the ```/etc/apache2/sites-available/dokuwiki.conf``` file and
+- I modified it to:
+``` apache
+<VirtualHost *:80>
+    ServerName dokuwiki.local
+    Redirect / https://dokuwiki.local
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName dokuwiki.local
+    DocumentRoot /var/www/html/dokuwiki
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/dokuwiki-selfsigned.crt
+    SSLCertificateKeyFile /etc/ssl/private/dokuwiki-selfsigned.key
+
+    <Directory /var/www/html/dokuwiki>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+
+### I. 4. Enable Apache SSL module
+
+```bash
+sudo a2enmod ssl
+```
+
+
+### I. 5. Restart Apache
+
+```bash
+sudo systemctl restart apache2
+```
+
+
+### I. 6. Test the connection
+
+```arduino
+https://dokuwiki.local
+```
