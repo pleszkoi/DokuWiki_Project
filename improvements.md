@@ -18,4 +18,4 @@ This improves the security of data transferred between the client and the server
 6. Verified the HTTPS connection using a web browser.
 
 ### 1.3. Reference:
-See [webserver.md – HTTPS Configuration](webserver.md#I. HTTPS Configuration)
+See [webserver.md – HTTPS Configuration](webserver.md#I.-HTTPS-Configuration)
