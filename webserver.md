@@ -114,7 +114,7 @@ This section describes how HTTPS was enabled for the local DokuWiki installation
 ### I. 1. Preparation
 
 - I checked if DokuWiki is enable with ```http://dokuwiki.local```.
-- I enabled Port 443 with ``` sudo ufw allow 443/tcp```.
+- I enabled Port 443 with ```sudo ufw allow 443/tcp```.
 
 ### I. 2. Generate a self-signed SSL certificate
 
