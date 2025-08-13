@@ -118,7 +118,7 @@ This section describes how HTTPS was enabled for the local DokuWiki installation
 
 ### I. 2. Generate a self-signed SSL certificate
 
-I ran the following commands on the server:
+I ran the following command on the server:
 
 ```bash
 sudo openssl req -x509 -nodes -days 365 \
