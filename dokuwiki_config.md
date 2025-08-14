@@ -326,3 +326,7 @@ It is worth reviewing these logs regularly for suspicious activity:
 - Apache logs:
     - Access logs: ```/var/log/apache2/access.log```
     - Error logs: ```/var/log/apache2/error.log```
+
+
+## I. Strenghten administrator password
+
