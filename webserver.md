@@ -107,7 +107,7 @@ In browser:
   http://dokuwiki.local/install.php
   ```
 
-## I. HTTPS Configuration
+## I. HTTPS configuration
 
 This section describes how HTTPS was enabled for the local DokuWiki installation using a self-signed SSL certificate.
 
