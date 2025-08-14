@@ -328,5 +328,5 @@ It is worth reviewing these logs regularly for suspicious activity:
     - Error logs: ```/var/log/apache2/error.log```
 
 
-## I. Strenghten administrator password
+## I. Strengthen administrator password
 
