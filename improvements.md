@@ -42,4 +42,4 @@ Secured the Dokuwiki administrator account with a strong, random password. I use
 
 ### 2.3. Reference
 
-See [dokuwiki_config.md - Strengthen adminintrator password](dokuwiki_config.md#i-strengthen-administrator-password)
+See [dokuwiki_config.md - Strenghten adminintrator password](dokuwiki_config.md#i-strengthen-administrator-password)
