@@ -330,3 +330,33 @@ It is worth reviewing these logs regularly for suspicious activity:
 
 ## I. Strengthen administrator password
 
+### I. 1. Choosing password manager
+
+Signed in ```bitwarden.com``` and downloaded its browser extension.
+
+### I. 2. Generating a strong password
+
+I generated a random password, that was 30 characters long, containing lowercase and uppercase letters, numbers and special characters. 
+
+### I. 3. Setting new password
+
+I logged in to DokuWiki Admin account, and changed the old password to the new one.
+
+```markdown
+Admin / User Manager / adin user / Edit user
+```
+
+### I. 4. Saving new password in password manager
+
+The new password's settings:
+
+- Title: dokuwiki.local
+- Username: istvan
+- Password: *(generated password)*
+- URL: ```http(s)://dokuwiki.local```
+
+### I. 5. Verifying the password
+
+- Log out of DokuWiki
+- Log back in with the credentials filled in from the password manager
+
