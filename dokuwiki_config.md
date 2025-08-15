@@ -343,7 +343,7 @@ I generated a random password, that was 30 characters long, containing lowercase
 I logged in to DokuWiki Admin account, and changed the old password to the new one.
 
 ```markdown
-Admin / User Manager / adin user / Edit user
+Admin / User Manager / admin user / Edit user
 ```
 
 ### I. 4. Saving new password in password manager
