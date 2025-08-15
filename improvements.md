@@ -35,10 +35,10 @@ Secured the Dokuwiki administrator account with a strong, random password. I use
 
 1. Signed in ```bitwarden.com``` and downloaded its browser extension
 2. Generated a strong, random password
-3. Logged in to Dokuwiki administrator account
+3. Logged in to Dokuwiki's Admin account
 4. Changed the old password to the new one
 5. Saved the new password in password manager
-6. Verified the password by logging out and in
+6. Verified the password by logging out and back in
 
 ### 2.3. Reference
 
