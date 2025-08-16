@@ -1,4 +1,4 @@
-# DokuWiki_Project
+# DokuWiki Project
 
 This project shows how I built a simple, Linux-based Homelab environment. I installed and configured a **DokuWiki system**. My goal was practicing the basics of Linux system administration, configuring a web server and getting to know about security principles. 
 
