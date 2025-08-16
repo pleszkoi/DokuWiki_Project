@@ -66,3 +66,22 @@ Ensured that the DokuWiki system and its configuration are backed up regularly w
 
 See [dokuwiki_config.md - Automated backup for DokuWiki](dokuwiki_config.md#ii-automated-backup-for-dokuwiki)
 
+
+## 4. System and plugin updates
+
+### 4.1. Summary
+
+To maintain the security and stability of DokuWiki, regular updates of the system, web server, and DokuWiki components are required.
+
+### 4.2. Key steps
+
+1. Updating Ubuntu system
+2. Updating Apache
+3. Updating PHP
+4. Updating DokuWiki
+5. Checking
+
+### 4.3. Reference
+
+See [dokuwiki_config.md - System and plugin updates](dokuwiki_config.md#iii-system-and-plugin-updates)
+
