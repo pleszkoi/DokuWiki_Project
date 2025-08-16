@@ -1,4 +1,4 @@
-# DokuWiki config
+# DokuWiki Config
 
 This document describes the installation and configuration of DokuWiki. The goal is to create an internal documentation system in homelab environment.
 
