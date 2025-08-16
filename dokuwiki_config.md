@@ -400,7 +400,7 @@ tar -czf "$BACKUP_DIR/dokuwiki_backup_$DATE.tar.gz" \
 find "$BACKUP_DIR" -type f -name "*.tar.gz" -mtime +30 -delete
 ```
 
-To make the script executable:
+To make the file executable:
 ```bash
 sudo chmod +x /usr/local/bin/dokuwiki_backup.sh
 ```
@@ -417,4 +417,27 @@ Adding the following line, to execute the script every day at midnight:
 0 0 * * * /usr/local/bin/dokuwiki_backup.sh
 ```
 
-### II. 4. 
+### II. 4. Testing the script
+
+Manually executed the script to confirm that backup works.
+```bash
+sudo /usr/local/bin/dokuwiki_backup.sh
+```
+
+Checked the backup directory, to ensure the .tar.gz file is in there.
+```bash
+ls -lah /backup/dokuwiki/
+```
+
+Checked the backup file's content, to make sure that the script works as intended.
+```bash
+tar -tzf /backup/dokuwiki/dokuwiki_backup_2025-08-16_12-00-00.tar.gz
+```
+
+### II. 5. Restoring if necessary
+
+```bash
+sudo tar -xzf /backup/dokuwiki/dokuwiki_backup_2025-08-16_12-00-00.tar.gz -C /
+sudo systemctl restart apache2
+```
+
