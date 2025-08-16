@@ -441,3 +441,68 @@ sudo tar -xzf /backup/dokuwiki/dokuwiki_backup_2025-08-16_12-00-00.tar.gz -C /
 sudo systemctl restart apache2
 ```
 
+
+## III. System and Plugin Updates
+
+To maintain the security, stability, and compatibility of the server and DokuWiki system, it is necessary to regularly update the Ubuntu system, Apache web server, PHP runtime, and DokuWiki system, including plugins.
+
+### III. 1. Updating Ubuntu system
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+For updating major version:
+
+```bash
+sudo do-release-upgrade
+```
+
+### III. 2. Updating Apache
+
+```bash
+sudo apt install apache2
+```
+
+### III. 3. Updating PHP
+
+The latest PHP available in the Ubuntu repositories can be obtained by running `apt upgrade`.
+
+A PPA repository is required when installing a newer major version
+```bash
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt install php8.3 libapache2-mod-php8.3
+```
+
+Then configure the new version under Apache
+```bash
+sudo a2dismod php8.1
+sudo a2enmod php8.3
+sudo systemctl restart apache2
+```
+
+### III. 4. Updating DokuWiki
+
+- Using the `Admin/Extension Manager` menu or
+- Manually:
+    - Downloading new version
+    ```bash
+    wget https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
+    ```
+    - Unpacking and swithing old files
+    ```bash
+    tar -xvzf dokuwiki-stable.tgz
+    sudo cp -r dokuwiki-*/* /var/www/html/dokuwiki/
+    ```
+
+### III. 5. Checking
+
+Checking versions
+- Ubuntu: `lsb_release -a`
+- Apache: `apache2 -v`
+- PHP: `php -v`
+- DokuWiki: at the bottom of the admin interface
+
+
