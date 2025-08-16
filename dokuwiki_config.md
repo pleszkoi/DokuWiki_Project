@@ -360,3 +360,61 @@ The new password's settings:
 - Log out of DokuWiki
 - Log back in with the credentials filled in from the password manager
 
+
+## II. Automated backup for DokuWiki
+
+To protect DokuWiki content and configurations against accidental data loss or corruption, I automated backup process with Cron.
+
+### II. 1. Identifying Backup Scope
+
+- `/var/www/html/dokuwiki` – Main DokuWiki directory containing pages, plugins, and themes
+- `/etc/apache2/sites-available/dokuwiki.conf` – Apache site configuration
+- `/etc/ssl/` – SSL certificates for HTTPS
+
+### II. 2. Writing backup script
+
+```bash
+#!/bin/bash
+
+# Date variable
+DATE=$(date +%Y-%m-%d_%H-%M-%S)
+
+# Backup directory
+BACKUP_DIR="/backup/dokuwiki"
+
+# Source directories
+DOKUWIKI_DIR="/var/www/html/dokuwiki"
+APACHE_CONF="/etc/apache2/sites-available/dokuwiki.conf"
+SSL_CERTS="/etc/ssl"
+
+# Creating backup directory, if it isn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Creating backup in tar.gz format
+tar -czf "$BACKUP_DIR/dokuwiki_backup_$DATE.tar.gz" \
+    "$DOKUWIKI_DIR" \
+    "$APACHE_CONF" \
+    "$SSL_CERTS"
+
+# Deleting old backups (older than 30 days)
+find "$BACKUP_DIR" -type f -name "*.tar.gz" -mtime +30 -delete
+```
+
+To make the script executable:
+```bash
+sudo chmod +x /usr/local/bin/dokuwiki_backup.sh
+```
+
+### II. 3. Automating the script with Cron
+
+Edit user's crontab:
+```bash
+sudo crontab -e
+```
+
+Adding the following line, to execute the script every day at midnight:
+```bash
+0 0 * * * /usr/local/bin/dokuwiki_backup.sh
+```
+
+### II. 4. 
