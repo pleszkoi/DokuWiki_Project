@@ -491,7 +491,7 @@ sudo systemctl restart apache2
     ```bash
     wget https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
     ```
-    - Unpacking and swithing old files
+    - Unpacking and switching old files
     ```bash
     tar -xvzf dokuwiki-stable.tgz
     sudo cp -r dokuwiki-*/* /var/www/html/dokuwiki/
