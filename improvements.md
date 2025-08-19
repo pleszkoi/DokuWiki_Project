@@ -85,3 +85,22 @@ To maintain the security and stability of DokuWiki, regular updates of the syste
 
 See [dokuwiki_config.md - System and plugin updates](dokuwiki_config.md#iii-system-and-plugin-updates)
 
+
+## 5. Protection against brute-force attacks
+
+### 5.1. Summary
+
+Installed fail2ban to prevent unauthorized login attempts and excessive load.
+
+### 5.2. Key steps
+
+1. Installing Fail2Ban
+2. Creating basic configuration
+3. Setting Apache security
+4. Enabling Fail2Ban
+5. Starting Fail2Ban
+6. Checking Fail2Ban status
+
+### 5.3. Reference
+
+See [webserver.md - Protection against brute-force attacks](webserver.md#ii-protection-against-bruteforce-attacks)
