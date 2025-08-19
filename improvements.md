@@ -103,4 +103,4 @@ Installed fail2ban to prevent unauthorized login attempts and excessive load.
 
 ### 5.3. Reference
 
-See [webserver.md - Protection against brute-force attacks](webserver.md#ii-protection-against-bruteforce-attacks)
+See [webserver.md - Protection against brute-force attacks](webserver.md#ii-protection-against-brute-force-attacks)
