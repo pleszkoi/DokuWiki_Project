@@ -107,6 +107,7 @@ In browser:
   http://dokuwiki.local/install.php
   ```
 
+
 ## I. HTTPS configuration
 
 This section describes how HTTPS was enabled for the local DokuWiki installation using a self-signed SSL certificate.
@@ -126,7 +127,6 @@ sudo openssl req -x509 -nodes -days 365 \
   -keyout /etc/ssl/private/dokuwiki-selfsigned.key \
   -out /etc/ssl/certs/dokuwiki-selfsigned.crt
 ```
-
 
 ### I. 3. Create HTTPS VirtualHost configuration
 
@@ -153,13 +153,11 @@ sudo openssl req -x509 -nodes -days 365 \
 </VirtualHost>
 ```
 
-
 ### I. 4. Enable Apache SSL module
 
 ```bash
 sudo a2enmod ssl
 ```
-
 
 ### I. 5. Restart Apache
 
@@ -167,9 +165,56 @@ sudo a2enmod ssl
 sudo systemctl restart apache2
 ```
 
-
 ### I. 6. Test the connection
 
 ```arduino
 https://dokuwiki.local
+```
+
+
+## II. Protection against brute-force attacks
+
+Fail2Ban monitors logs and automatically bans the IP address upon repeated failed attempts.
+
+### II. 1. Installing Fail2Ban
+
+```bash
+sudo apt install fail2ban -y
+```
+
+### II. 2. Creating basic configuration
+
+```bash
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+```
+
+### II. 3. Setting Apache security
+
+```ini
+[apache-auth]
+enabled = true
+port    = http,https
+logpath = /var/log/apache*/*error.log
+maxretry = 5
+bantime = 3600
+```
+
+### II. 4. Enabling Fail2Ban
+
+```bash
+sudo systemctl enable fail2ban
+```
+
+### II. 5. Starting Fail2Ban
+
+```bash
+sudo systemctl start fail2ban
+```
+
+### II. 6. Checking Fail2Ban status
+
+```bash
+sudo systemctl status fail2ban.service
+sudo fail2ban-client status
+sudo fail2ban-client status apache-auth
 ```
